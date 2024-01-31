@@ -13,7 +13,6 @@ print(data)
 
 # Handle Missing Values
 miss_val = input("Please choose a type among = (Forward Filling: ffill, Backward Filling: bfill, Interpolate: linear) ---> ")
-print(miss_val)
 if miss_val in ['ffill', 'bfill']:
     data.fillna(method = miss_val, inplace = True)
 else:
