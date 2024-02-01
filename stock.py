@@ -21,7 +21,7 @@ def fetch_stock_data(stock_symbol, start_date, end_date):
     data = stock.history(start=start_date, end=end_date)
     return data
 
-# 示例：获取苹果公司(AAPL)在指定日期范围内的股票数据
+# example: apple stock data 
 data = fetch_stock_data('AAPL', '2023-01-01', '2023-01-10')
 print(data)
 
@@ -33,23 +33,6 @@ def check_stock_validity(stock_symbol):
     #return stock.info['regularMarketPrice'] is not None
     return stock
 
-# def add_stock_to_portfolio(portfolio_id, stock_symbol):
-#     if check_stock_validity(stock_symbol):
-#         try:
-#             conn = sqlite3.connect('stock_portfolio.db')
-#             cursor = conn.cursor()
-
-#             # 在这里，我们默认股票名称为股票代码
-#             cursor.execute("INSERT INTO stocks (portfolio_id, stock_symbol, stock_name) VALUES (?, ?, ?)",
-#                            (portfolio_id, stock_symbol, stock_symbol))
-#             conn.commit()
-#             print("股票添加成功")
-#         except sqlite3.Error as e:
-#             print(f"数据库错误: {e}")
-#         finally:
-#             conn.close()
-#     else:
-#         print("无效的股票代码")
 
 def add_portfolio(portfolio_name, creation_date):
     try:
